@@ -8,12 +8,18 @@
   "scripts": {
     "start": "node server.js",
     "test": "jest --watch",
-    "lint": "yarn eslint"
+    "lint": "yarn standard"
+  },
+  "standard": {
+    "env": [
+      "jest"
+    ]
   },
   "dependencies": {
     "core-js": "^3.20.1",
-    "express": "^4.16.1",
-    "regenerator-runtime": "^0.13.9"
+    "express": "^4.17.2",
+    "regenerator-runtime": "^0.13.9",
+    "standard": "^16.0.4"
   },
   "devDependencies": {
     "@babel/cli": "^7.16.0",

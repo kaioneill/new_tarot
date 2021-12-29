@@ -1,3 +1,3 @@
 module.exports = {
-  moduleDirectories: ["<rootDir>", "node_modules", "src"]
+  moduleDirectories: ['<rootDir>', 'node_modules', 'src']
 }

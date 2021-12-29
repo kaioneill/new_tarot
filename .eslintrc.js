@@ -1,13 +1,13 @@
 module.exports = {
-  parser: "@babel/eslint-parser",
+  parser: '@babel/eslint-parser',
   parserOptions: {
-    sourceType: "module",
+    sourceType: 'module',
     allowImportExportEverywhere: false,
     ecmaFeatures: {
-      globalReturn: false,
+      globalReturn: false
     },
     babelOptions: {
-      configFile: "path/to/config.js",
-    },
-  },
-};
+      configFile: 'path/to/config.js'
+    }
+  }
+}

@@ -1,12 +1,12 @@
 class Spread {
-  constructor(date) {
-    this.date = date;
+  constructor (date) {
+    this.date = date
     this.cards = []
   };
 
-  addCard(card) {
+  addCard (card) {
     this.cards.push(card)
   }
 };
 
-export { Spread };
+export { Spread }
