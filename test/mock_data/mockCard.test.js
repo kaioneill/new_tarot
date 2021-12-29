@@ -5,7 +5,7 @@ describe('MockCard', () => {
     it('returns a basic card', () => {
       const card = MockCard.basicCard()
 
-      expect(card.name).toBe('Sun')
+      expect(card.name).toBe('The Sun')
     })
   })
 })
