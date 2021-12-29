@@ -2,6 +2,7 @@ import { Spread } from 'models/spread'
 import { Card } from 'models/card'
 
 describe('Spread', () => {
+  const id = '1234'
   const date = '12/28/2021'
   const spread = new Spread(date)
 

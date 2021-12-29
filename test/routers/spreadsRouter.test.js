@@ -15,4 +15,9 @@ describe('spreadsRouter', function () {
     const res = await request(app).get(`/spreads/${spreadId}`)
     expect(res.statusCode).toBe(200)
   })
+
+  it('responds to /spreads/:spreadId/add_card', async () => {
+    const res = await request(app).get(`/spreads/${spreadId}/add_card`)
+    expect(res.statusCode).toBe(200)
+  })
 })
