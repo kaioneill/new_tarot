@@ -1,10 +1,14 @@
-import { index } from 'controllers/spreadsController'
+import { show } from 'controllers/spreadsController'
 import { MockSpread } from 'mock_data/mockSpread'
 import { SpreadSerializer } from 'serializers/spreadSerializer'
 
 describe('spreadsController', function () {
-  describe('#index', () => {
-    const req = {}
+  describe('#show', () => {
+    const req = {
+      params: {
+        spreadId: '1234'
+      }
+    }
     const res = {
       send: jest.fn()
     }
@@ -21,7 +25,7 @@ describe('spreadsController', function () {
     const spreadSerializerSpy = jest.spyOn(SpreadSerializer.prototype, 'serialize').mockReturnValue(response)
 
     beforeEach(() => {
-      index(req, res)
+      show(req, res)
     })
 
     it('calls fetches the spread data', () => {
