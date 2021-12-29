@@ -1,9 +1,9 @@
 import express from 'express'
-import { spreadRouter } from 'routers/spreadRouter'
+import { spreadsRouter } from 'routers/spreadsRouter'
 
 const rootRouter = express.Router()
 
-rootRouter.use('/spread', spreadRouter)
+rootRouter.use('/spreads', spreadsRouter)
 
 rootRouter.get('/', (req, res) => {})
 
