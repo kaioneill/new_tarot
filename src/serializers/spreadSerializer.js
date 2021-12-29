@@ -1,4 +1,4 @@
-import { CardSerializer } from 'serializers/cardSerializer'
+import { CardSerializer } from './cardSerializer'
 
 class SpreadSerializer {
   constructor (spread) {
