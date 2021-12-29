@@ -10,4 +10,5 @@ it('creates the card with the correct attributes', () => {
   expect(card.name).toBe(name);
   expect(card.suit).toBe(suit);
   expect(card.number).toBe(number);
+  expect(card.friendlyId).toBe("two-of-swords");
 });

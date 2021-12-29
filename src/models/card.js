@@ -7,6 +7,7 @@ class Card {
     this.name = name;
     this.suit = suit;
     this.number = number;
+    this.friendlyId = name.toLowerCase().replace(/\s/g , "-");
   };
 };
 
