@@ -1,5 +1,5 @@
-import { Spread } from '../models/spread'
-import { Card } from '../models/card'
+import { Spread } from 'models/spread'
+import { Card } from 'models/card'
 
 class MockSpread {
   static basicSpread () {

@@ -1,6 +1,6 @@
 import express from 'express'
-import { MockSpread } from '../mock_data/mockSpread'
-import { SpreadSerializer } from '../serializers/spreadSerializer'
+import { MockSpread } from 'mock_data/mockSpread'
+import { SpreadSerializer } from 'serializers/spreadSerializer'
 
 const rootRouter = express.Router()
 

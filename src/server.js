@@ -1,5 +1,5 @@
 import express from 'express'
-import { rootRouter } from './routers/rootRouter'
+import { rootRouter } from 'routers/rootRouter'
 
 // Constants
 const PORT = 3000
