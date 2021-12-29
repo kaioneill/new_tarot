@@ -1,13 +1,10 @@
 import express from 'express'
-import { MockSpread } from 'mock_data/mockSpread'
-import { SpreadSerializer } from 'serializers/spreadSerializer'
+import { spreadRouter } from 'routers/spreadRouter'
 
 const rootRouter = express.Router()
 
-rootRouter.get('/', (req, res) => {
-  const spread = MockSpread.basicSpread()
-  const response = new SpreadSerializer(spread).serialize()
-  res.send(response)
-})
+rootRouter.use('/spread', spreadRouter)
+
+rootRouter.get('/', (req, res) => {})
 
 export { rootRouter }
