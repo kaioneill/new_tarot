@@ -1,6 +1,7 @@
 import { MockSpread } from 'mock_data/mockSpread'
 import { SpreadSerializer } from 'serializers/spreadSerializer'
-import { MockCard } from 'mock_data/mockCard'
+import { CardSerializer } from 'serializers/cardSerializer'
+import { FetchRandomCardService } from 'services/FetchRandomCardService'
 
 const show = (req, res) => {
   // const spreadId = req.params.spreadId
@@ -14,10 +15,10 @@ const pullCard = (req, res) => {
   // const spreadId = req.params.spreadId
 
   const spread = MockSpread.basicSpread()
-  const newCard = MockCard.theSun()
+  const newCard = FetchRandomCardService.executeCall()
   spread.addCard(newCard)
 
-  const response = new SpreadSerializer(spread).serialize()
+  const response = new CardSerializer(newCard).serialize()
   res.send(response)
 }
 
