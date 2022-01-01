@@ -4,7 +4,7 @@ import { MockCard } from 'mock_data/mockCard'
 
 describe('MockStore', () => {
   const store = new MockStore()
-  
+
   describe('#randomCard', () => {
     it('returns a random card', () => {
       expect(store.randomCard()).toBeInstanceOf(Card)
