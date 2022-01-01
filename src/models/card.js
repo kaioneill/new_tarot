@@ -5,7 +5,7 @@ class Card {
     this.number = number
     this.reversed = reversed
     this.friendlyId = name.toLowerCase().replace(/\s/g, '-')
-  };
-};
+  }
+}
 
 export { Card }

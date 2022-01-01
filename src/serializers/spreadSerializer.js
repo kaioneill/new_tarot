@@ -3,7 +3,7 @@ import { CardSerializer } from 'serializers/cardSerializer'
 class SpreadSerializer {
   constructor (spread) {
     this.spread = spread
-  };
+  }
 
   serialize () {
     return {
@@ -13,6 +13,6 @@ class SpreadSerializer {
       })
     }
   }
-};
+}
 
 export { SpreadSerializer }

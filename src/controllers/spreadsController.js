@@ -10,15 +10,15 @@ const show = (req, res) => {
   res.send(response)
 }
 
-const addCard = (req, res) => {
+const pullCard = (req, res) => {
   // const spreadId = req.params.spreadId
 
   const spread = MockSpread.basicSpread()
-  const newCard = MockCard.basicCard()
+  const newCard = MockCard.theSun()
   spread.addCard(newCard)
 
   const response = new SpreadSerializer(spread).serialize()
   res.send(response)
 }
 
-export { show, addCard }
+export { show, pullCard }

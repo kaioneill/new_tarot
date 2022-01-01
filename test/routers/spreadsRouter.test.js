@@ -16,8 +16,14 @@ describe('spreadsRouter', function () {
     expect(res.statusCode).toBe(200)
   })
 
-  it('responds to /spreads/:spreadId/add_card', async () => {
-    const res = await request(app).get(`/spreads/${spreadId}/add_card`)
+  it('responds to /spreads/:spreadId/pull_card', async () => {
+    const res = await request(app).get(`/spreads/${spreadId}/pull_card`)
     expect(res.statusCode).toBe(200)
   })
+
+  // it('responds to /spreads/:spreadId/add_card/:cardId', async () => {
+  //   const cardId = '2345'
+  //   const res = await request(app).get(`/spreads/${spreadId}/pull_card/${cardId}`)
+  //   expect(res.statusCode).toBe(200)
+  // })
 })

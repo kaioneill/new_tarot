@@ -1,7 +1,7 @@
 class CardSerializer {
   constructor (card) {
     this.card = card
-  };
+  }
 
   serialize () {
     return {
@@ -12,6 +12,6 @@ class CardSerializer {
       friendlyId: this.card.friendlyId
     }
   }
-};
+}
 
 export { CardSerializer }
