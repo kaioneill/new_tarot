@@ -13,8 +13,12 @@ some auth will need to come before all of these, likely passport with Auth0
 
 1. `GET /spreads/random`
   - no params, returns a spread with 3 cards
+  - [x] with mock data
+  - [] connect to db
 2. `POST /spreads`
   - body params of the spread with cards (+ids) and any spread data like the date and user entered notes on the spread
+  - [] with mock data
+  - [] connect to db
 
 ### user built spread
 
