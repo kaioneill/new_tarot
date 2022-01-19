@@ -10,7 +10,6 @@ app.use('/', rootRouter)
 rootRouter.use('/spreads', spreadsRouter)
 
 describe('spreadsRouter', function () {
-  const spreadId = '1234'
   it('responds to /spreads/random', async () => {
     const res = await request(app).get('/spreads/random')
     expect(res.statusCode).toBe(200)
