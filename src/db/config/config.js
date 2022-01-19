@@ -3,14 +3,14 @@ require('dotenv').config()
 module.exports = {
   development: {
     url: process.env.PGURL,
-    dialect: 'postgres',
+    dialect: 'postgres'
   },
   test: {
     url: process.env.PGURL,
-    dialect: 'postgres',
+    dialect: 'postgres'
   },
   production: {
     url: process.env.PGURL,
-    dialect: 'postgres',
-  },
+    dialect: 'postgres'
+  }
 }
