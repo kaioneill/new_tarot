@@ -1,5 +1,5 @@
-'use strict';
-import { Model } from 'sequelize' 
+'use strict'
+import { Model } from 'sequelize'
 
 export default (sequelize, DataTypes) => {
   class Card extends Model {
@@ -8,7 +8,7 @@ export default (sequelize, DataTypes) => {
      * This method is not a part of Sequelize lifecycle.
      * The `models/index` file will call this method automatically.
      */
-    static associate(models) {
+    static associate (models) {
       // define association here
     }
   };
@@ -18,7 +18,7 @@ export default (sequelize, DataTypes) => {
     number: DataTypes.INTEGER
   }, {
     sequelize,
-    modelName: 'Card',
-  });
-  return Card;
-};
+    modelName: 'Card'
+  })
+  return Card
+}
