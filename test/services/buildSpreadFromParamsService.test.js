@@ -1,6 +1,6 @@
 import { BuildSpreadFromParamsService } from 'services/buildSpreadFromParamsService'
 
-import * as resolver from 'config/resolver'
+import * as Resolver from 'config/resolver'
 import { Spread } from 'models/spread'
 import { MockCard } from 'mock_data/mockCard'
 
@@ -9,15 +9,15 @@ describe('BuildSpreadFromParamsService', () => {
   const mockCardRepository = {
     byId: (id) => card
   }
-  jest.spyOn(resolver, 'resolveCardRepository').mockReturnValue(mockCardRepository)
+  jest.spyOn(Resolver, 'resolveCardRepository').mockReturnValue(mockCardRepository)
   const cardByIdSpy = jest.spyOn(mockCardRepository, 'byId')
 
   const service = new BuildSpreadFromParamsService()
 
-  const cardId = "123"
+  const cardId = '123'
   const params = {
     spread: {
-      date: "03/08/2022",
+      date: '03/08/2022',
       cards_attributes: [
         {
           id: cardId

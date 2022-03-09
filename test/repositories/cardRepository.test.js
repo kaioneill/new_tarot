@@ -4,7 +4,14 @@ import { MockCard } from 'mock_data/mockCard'
 
 describe('CardRepository', () => {
   const dataStore = {
-    randomCard: jest.fn().mockReturnValue(MockCard.theSun()),
+    randomCard: jest.fn()
+      .mockReturnValueOnce(MockCard.theSun())
+      .mockReturnValueOnce(MockCard.twoOfSwords())
+      .mockReturnValueOnce(MockCard.threeOfWandsReversed())
+      .mockReturnValueOnce(MockCard.theStar())
+      .mockReturnValueOnce(MockCard.queenOfPentaclesReversed())
+      .mockReturnValueOnce(MockCard.aceOfCups()),
+
     getCard: jest.fn().mockReturnValue(MockCard.twoOfSwords())
   }
   const repo = new CardRepository(dataStore)
@@ -18,6 +25,13 @@ describe('CardRepository', () => {
   describe('#randomCard', () => {
     it('returns a random card', () => {
       expect(repo.randomCard()).toBeInstanceOf(Card)
+    })
+  })
+
+  describe('#randomCards', () => {
+    const numCards = 3
+    it('returns 3 random cards', () => {
+      expect(repo.randomCards(numCards)).toHaveLength(3)
     })
   })
 

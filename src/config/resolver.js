@@ -1,26 +1,35 @@
 import { SpreadRepository } from 'repositories/spreadRepository'
+import { BuildSpreadFromParamsService } from 'services/buildSpreadFromParamsService'
+import { FetchCardsService } from 'services/fetchCardsService'
 
 // returned object must respond to
 // .buildSpread(req.body)
-function resolveBuildSpreadFromParamsService() {
+const resolveBuildSpreadFromParamsService = () => {
   return new BuildSpreadFromParamsService()
 }
 
 // returned object must respond to
 // .randomSpread()
 // .saveSpread(spread)
-function resolveSpreadRepository() {
+const resolveSpreadRepository = () => {
   return new SpreadRepository()
 }
 
 // returned object must respond to
 // .byId(cardId)
-function resolveCardRepository() {
+const resolveCardRepository = () => {
   return null
+}
+
+// returned object must respond to
+// .randomCards(numCards = 3)
+const resolveFetchCardsService = () => {
+  return new FetchCardsService()
 }
 
 export {
   resolveBuildSpreadFromParamsService,
   resolveSpreadRepository,
-  resolveCardRepository
+  resolveCardRepository,
+  resolveFetchCardsService
 }

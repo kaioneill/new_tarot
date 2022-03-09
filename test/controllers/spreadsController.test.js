@@ -1,12 +1,19 @@
 import { random, create } from 'controllers/spreadsController'
 
-import * as resolver from 'config/resolver'
+import * as Resolver from 'config/resolver'
 import { MockSpread } from 'mock_data/mockSpread'
 
-import { SpreadRepository } from 'repositories/spreadRepository'
 import { SpreadSerializer } from 'serializers/spreadSerializer'
 
 describe('spreadsController', function () {
+  const spread = MockSpread.basicSpread()
+
+  const mockSpreadRepository = {
+    randomSpread: () => spread,
+    saveSpread: (spreadToSave) => spread
+  }
+  jest.spyOn(Resolver, 'resolveSpreadRepository').mockReturnValue(mockSpreadRepository)
+
   describe('#random', () => {
     const req = {
       params: {
@@ -14,7 +21,7 @@ describe('spreadsController', function () {
       }
     }
     const res = {
-      send: jest.fn(),
+      send: jest.fn()
     }
     const response = {
       date: '12/28/2021',
@@ -25,8 +32,8 @@ describe('spreadsController', function () {
       ]
     }
 
-    // TODO: refactor to use resolver
-    const randomSpreadSpy = jest.spyOn(SpreadRepository.prototype, 'randomSpread')
+    const randomSpreadSpy = jest.spyOn(mockSpreadRepository, 'randomSpread')
+
     const spreadSerializerSpy = jest.spyOn(SpreadSerializer.prototype, 'serialize').mockReturnValue(response)
 
     beforeEach(() => {
@@ -47,20 +54,6 @@ describe('spreadsController', function () {
   })
 
   describe('#create', () => {
-    const spread = MockSpread.basicSpread()
-
-    const mockBuildSpreadFromParamsService = {
-      buildSpread: (body) => spread
-    }
-    jest.spyOn(resolver, 'resolveBuildSpreadFromParamsService').mockReturnValue(mockBuildSpreadFromParamsService)
-    const buildSpreadSpy = jest.spyOn(mockBuildSpreadFromParamsService, 'buildSpread')
-
-    const mockSpreadRepository = {
-      saveSpread: (spread) => spread
-    }
-    jest.spyOn(resolver, 'resolveSpreadRepository').mockReturnValue(mockSpreadRepository)
-    const saveSpreadSpy = jest.spyOn(mockSpreadRepository, 'saveSpread')
-
     const req = {
       body: {
         spread: {}
@@ -71,6 +64,16 @@ describe('spreadsController', function () {
       sendStatus: jest.fn(),
       statusCode: 201
     }
+
+    const spread = MockSpread.basicSpread()
+
+    const mockBuildSpreadFromParamsService = {
+      buildSpread: (body) => spread
+    }
+    jest.spyOn(Resolver, 'resolveBuildSpreadFromParamsService').mockReturnValue(mockBuildSpreadFromParamsService)
+    const buildSpreadSpy = jest.spyOn(mockBuildSpreadFromParamsService, 'buildSpread')
+
+    const saveSpreadSpy = jest.spyOn(mockSpreadRepository, 'saveSpread')
 
     beforeEach(() => {
       create(req, res)
